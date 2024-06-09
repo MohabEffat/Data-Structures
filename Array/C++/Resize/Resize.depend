@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1717975643 source:c:\users\user\downloads\data structures\array\c++\resize\main.cpp
+	<cstring>
+	<iostream>
+
