@@ -1,53 +1,80 @@
-class LinkedListNode{
+class LinkedListNode {
     public int data;
     public LinkedListNode next;
-    LinkedListNode(int _data){
+
+    LinkedListNode(int _data) {
         this.data = _data;
         this.next = null;
     };
 }
 
-class LinkedList{
-    public LinkedListNode Head = null;
-    public LinkedListNode Tail = null;
-    public void InsertLast(int _data){
-        LinkedListNode newNode = new LinkedListNode(_data);
-        if(this.Head == null){
-           this.Head = newNode;
+class LinkedList {
+    private int size;
+    public boolean unique;
+    public LinkedListNode Head ;
+    public LinkedListNode Tail ;
+    LinkedList(boolean unique){
+        this.Tail = null;
+        this.Head = null;
+        this.size = 0;
+        this.unique = (unique);
+    }
+    public boolean isExist(int _date){
+        return this.Find(_date) != null;
+    }
+    public boolean canInsert(int _data){
+        if(this.unique && this.isExist(_data)){
+            System.out.println("Date Exists");
+            return false;
         }
-        else{
+        else
+            return true;
+    }
+    public void InsertLast(int _data) {
+        if(!this.canInsert(_data)) return;
+        LinkedListNode newNode = new LinkedListNode(_data);
+        if (this.Head == null) {
+            this.Head = newNode;
+        } else {
             this.Tail.next = newNode;
         }
         this.Tail = newNode;
+        this.size ++;
     }
-    public void InsertAfter(int data, int _data){
+
+    public void InsertAfter(int data, int _data) {
+        if(!this.canInsert(_data)) return;
         LinkedListNode newNode = new LinkedListNode(_data);
         LinkedListNode node = this.Find(data);
-        if(node != null){
+        if (node != null) {
             newNode.next = node.next;
             node.next = newNode;
-            if(newNode.next == null) {
+            if (newNode.next == null) {
                 this.Tail = newNode;
             }
         }
+        this.size ++;
     }
-    public void InsertBefore(int data, int _data){
+
+    public void InsertBefore(int data, int _data) {
+        if(!this.canInsert(_data)) return;
         LinkedListNode newNode = new LinkedListNode(_data);
         LinkedListNode node = this.Find(data);
-        if(node != null){
+        if (node != null) {
             newNode.next = node;
             LinkedListNode parent = this.findParent(node);
-            if(parent == null){
+            if (parent == null) {
                 this.Head = newNode;
-            }
-            else{
+            } else {
                 parent.next = newNode;
             }
         }
+        this.size ++;
     }
-    public void deleteNode(int _data){
+
+    public void deleteNode(int _data) {
         LinkedListNode node = this.Find(_data);
-        if(node != null) {
+        if (node != null) {
             if (this.Head == this.Tail) {
                 this.Head = null;
                 this.Tail = null;
@@ -63,72 +90,102 @@ class LinkedList{
                 }
             }
         }
+        this.size --;
     }
-    public LinkedListNode findParent(LinkedListNode node){
+    public int getSize(){
+        return this.size;
+    }
+
+    public LinkedListNode findParent(LinkedListNode node) {
         for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
-            if(itr.Current().next == node){
+            if (itr.Current().next == node) {
                 return itr.Current();
             }
         }
         return null;
     }
+
     public LinkedListIterator begin() {
         return new LinkedListIterator(this.Head);
     }
+
     public void printList() {
         for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
             System.out.print(itr.Data() + " -> ");
         }
         System.out.println();
     }
+
     public LinkedListNode Find(int _data) {
         for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
-            if(_data == itr.Data()){
+            if (_data == itr.Data()) {
                 return itr.Current();
             }
         }
         return null;
     }
+    public int getSum()
+    {
+        int sum = 0;
+        for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next())
+        {
+            sum += itr.Data();
+        }
+        return sum;
+    }
+    public void InsertHead(int _data){
+        if(!this.canInsert(_data)) return;
+        LinkedListNode newNode = new LinkedListNode(_data);
+        if(this.Head == null){
+            this.Head = newNode;
+            this.Tail = newNode;
+        }else{
+            newNode.next = this.Head;
+            this.Head = newNode;
+        }
+        this.size++;
+    }
+    public void DeleteHead(){
+        if(this.Head == null) return ;
+        this.Head = this.Head.next;
+        this.size--;
+    }
 }
-class LinkedListIterator{
+
+class LinkedListIterator {
     private LinkedListNode CurrentNode;
-    public LinkedListIterator(){
+
+    public LinkedListIterator() {
         this.CurrentNode = null;
     }
-    public LinkedListIterator (LinkedListNode node){
+
+    public LinkedListIterator(LinkedListNode node) {
         this.CurrentNode = node;
     }
-    int Data(){
+
+    int Data() {
         return this.CurrentNode.data;
     }
-    public void Next(){
-            this.CurrentNode = this.CurrentNode.next;
+
+    public void Next() {
+        this.CurrentNode = this.CurrentNode.next;
     }
-    public LinkedListNode Current(){
+
+    public LinkedListNode Current() {
         return this.CurrentNode;
     }
 }
 
-
-
-
 public class Main {
     public static void main(String[] args) {
-        LinkedList List = new LinkedList();
+        LinkedList List = new LinkedList(true);
         List.InsertLast(1);
         List.InsertLast(2);
         List.InsertLast(3);
         List.printList();
-        List.InsertLast(5);
-        List.InsertAfter(5,16320);
+        List.InsertAfter(1,2);
         List.printList();
-        List.InsertLast(2000);
+        List.DeleteHead();
         List.printList();
-        List.InsertBefore(1,6000);
-        List.printList();
-        List.deleteNode(2000);
-        List.printList();
-
-
     }
 }
