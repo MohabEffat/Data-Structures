@@ -6,7 +6,7 @@ class Stack{
     public void Push(int _data){
         this.dateList.InsertHead(_data);
     }
-    public int Pop(){
+    public int pop(){
         int headData = this.dateList.Head.data;
         this.dateList.DeleteHead();
         return headData;

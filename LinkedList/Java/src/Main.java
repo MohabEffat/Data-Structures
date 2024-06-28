@@ -1,28 +1,28 @@
-class LinkedListNode {
-    public int data;
-    public LinkedListNode next;
+class LinkedListNode<T> {
+    public T data;
+    public LinkedListNode<T> next;
 
-    LinkedListNode(int _data) {
+    LinkedListNode(T _data) {
         this.data = _data;
         this.next = null;
-    };
+    }
 }
 
-class LinkedList {
+class LinkedList<T> {
     private int size;
     public boolean unique;
-    public LinkedListNode Head ;
-    public LinkedListNode Tail ;
+    public LinkedListNode<T> Head ;
+    public LinkedListNode<T> Tail ;
     LinkedList(boolean unique){
         this.Tail = null;
         this.Head = null;
         this.size = 0;
         this.unique = (unique);
     }
-    public boolean isExist(int _date){
+    public boolean isExist(T _date){
         return this.Find(_date) != null;
     }
-    public boolean canInsert(int _data){
+    public boolean canInsert(T _data){
         if(this.unique && this.isExist(_data)){
             System.out.println("Date Exists");
             return false;
@@ -30,9 +30,9 @@ class LinkedList {
         else
             return true;
     }
-    public void InsertLast(int _data) {
+    public void InsertLast(T _data) {
         if(!this.canInsert(_data)) return;
-        LinkedListNode newNode = new LinkedListNode(_data);
+        LinkedListNode<T> newNode = new LinkedListNode<>(_data);
         if (this.Head == null) {
             this.Head = newNode;
         } else {
@@ -42,10 +42,10 @@ class LinkedList {
         this.size ++;
     }
 
-    public void InsertAfter(int data, int _data) {
+    public void InsertAfter(T data, T _data) {
         if(!this.canInsert(_data)) return;
-        LinkedListNode newNode = new LinkedListNode(_data);
-        LinkedListNode node = this.Find(data);
+        LinkedListNode<T> newNode = new LinkedListNode<>(_data);
+        LinkedListNode<T> node = this.Find(data);
         if (node != null) {
             newNode.next = node.next;
             node.next = newNode;
@@ -56,13 +56,13 @@ class LinkedList {
         this.size ++;
     }
 
-    public void InsertBefore(int data, int _data) {
+    public void InsertBefore(T data, T _data) {
         if(!this.canInsert(_data)) return;
-        LinkedListNode newNode = new LinkedListNode(_data);
-        LinkedListNode node = this.Find(data);
+        LinkedListNode<T> newNode = new LinkedListNode<>(_data);
+        LinkedListNode<T> node = this.Find(data);
         if (node != null) {
             newNode.next = node;
-            LinkedListNode parent = this.findParent(node);
+            LinkedListNode<T> parent = this.findParent(node);
             if (parent == null) {
                 this.Head = newNode;
             } else {
@@ -72,8 +72,8 @@ class LinkedList {
         this.size ++;
     }
 
-    public void deleteNode(int _data) {
-        LinkedListNode node = this.Find(_data);
+    public void deleteNode(T _data) {
+        LinkedListNode<T> node = this.Find(_data);
         if (node != null) {
             if (this.Head == this.Tail) {
                 this.Head = null;
@@ -81,7 +81,7 @@ class LinkedList {
             } else if (this.Head == node) {
                 this.Head = node.next;
             } else {
-                LinkedListNode parent = this.findParent(node);
+                LinkedListNode<T> parent = this.findParent(node);
                 if (this.Tail == node) {
                     this.Tail = parent;
                     parent.next = null;
@@ -96,8 +96,8 @@ class LinkedList {
         return this.size;
     }
 
-    public LinkedListNode findParent(LinkedListNode node) {
-        for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
+    public LinkedListNode<T> findParent(LinkedListNode<T> node) {
+        for (LinkedListIterator<T>  itr = this.begin(); itr.Current() != null; itr.Next()) {
             if (itr.Current().next == node) {
                 return itr.Current();
             }
@@ -105,37 +105,28 @@ class LinkedList {
         return null;
     }
 
-    public LinkedListIterator begin() {
-        return new LinkedListIterator(this.Head);
+    public LinkedListIterator<T>  begin() {
+        return new LinkedListIterator<> (this.Head);
     }
 
     public void printList() {
-        for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
+        for (LinkedListIterator<T>  itr = this.begin(); itr.Current() != null; itr.Next()) {
             System.out.print(itr.Data() + " -> ");
         }
         System.out.println();
     }
 
-    public LinkedListNode Find(int _data) {
-        for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next()) {
+    public LinkedListNode<T> Find(T _data) {
+        for (LinkedListIterator<T>  itr = this.begin(); itr.Current() != null; itr.Next()) {
             if (_data == itr.Data()) {
                 return itr.Current();
             }
         }
         return null;
     }
-    public int getSum()
-    {
-        int sum = 0;
-        for (LinkedListIterator itr = this.begin(); itr.Current() != null; itr.Next())
-        {
-            sum += itr.Data();
-        }
-        return sum;
-    }
-    public void InsertHead(int _data){
+    public void InsertHead(T _data){
         if(!this.canInsert(_data)) return;
-        LinkedListNode newNode = new LinkedListNode(_data);
+        LinkedListNode<T> newNode = new LinkedListNode<>(_data);
         if(this.Head == null){
             this.Head = newNode;
             this.Tail = newNode;
@@ -152,18 +143,18 @@ class LinkedList {
     }
 }
 
-class LinkedListIterator {
-    private LinkedListNode CurrentNode;
+class LinkedListIterator<T> {
+    private LinkedListNode<T> CurrentNode;
 
     public LinkedListIterator() {
         this.CurrentNode = null;
     }
 
-    public LinkedListIterator(LinkedListNode node) {
+    public LinkedListIterator(LinkedListNode<T> node) {
         this.CurrentNode = node;
     }
 
-    int Data() {
+    T Data() {
         return this.CurrentNode.data;
     }
 
@@ -171,21 +162,19 @@ class LinkedListIterator {
         this.CurrentNode = this.CurrentNode.next;
     }
 
-    public LinkedListNode Current() {
+    public LinkedListNode<T> Current() {
         return this.CurrentNode;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList List = new LinkedList(true);
-        List.InsertLast(1);
-        List.InsertLast(2);
-        List.InsertLast(3);
+        LinkedList<String> List = new LinkedList<>(true);
+        List.InsertLast("Mohab");
+        List.InsertLast("Effat");
+        List.InsertLast("Mahmoud");
         List.printList();
-        List.InsertAfter(1,2);
-        List.printList();
-        List.DeleteHead();
+        List.InsertAfter("Mahmoud","Habeb");
         List.printList();
     }
 }

@@ -13,8 +13,6 @@ public class Main {
 //        dic.Print();
         System.out.println("------------------------");
         Hash hash = new Hash();
-        hash.Hash32("this is Original Text");
         hash.Hash32("This is Original Text");
-
     }
 }

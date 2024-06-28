@@ -14,8 +14,8 @@ public class Main {
         System.out.println(stack.peek());
         System.out.println("Size : " + stack.GetLen());
         while(!stack.isEmpty()){
-            stack.Pop();
-            stack.printStack();
+            int value = stack.pop();
+            System.out.println("The Value: " + value);
         }
         System.out.println("-----------------------------------------------");
 
