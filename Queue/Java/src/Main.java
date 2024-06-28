@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        QueueL queueL = new QueueL();
+        QueueL<Integer> queueL = new QueueL<>();
         System.out.println(queueL.getSize());
         queueL.enqueue(10);
         queueL.enqueue(30);
