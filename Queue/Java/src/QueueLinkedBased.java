@@ -1,7 +1,7 @@
-class QueueL<T> {
+class QueueLinkedBased<T> {
     private LinkedList<T> dataList;
 
-    public QueueL() {
+    public QueueLinkedBased() {
         dataList = new LinkedList<T>(true);
     }
 
