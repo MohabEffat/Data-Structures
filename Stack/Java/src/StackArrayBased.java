@@ -1,5 +1,3 @@
-import static java.lang.System.arraycopy;
-
 class StackArrayBased<T> {
     private T[] dataList;
     private int topIndex;
