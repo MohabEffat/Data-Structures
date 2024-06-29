@@ -2,47 +2,31 @@
 public class Main {
     public static void main(String[] args) {
 
-        Stack stack = new Stack(true);
-        System.out.println("Is Empty : " + stack.isEmpty());
-        stack.Push(10);
-        stack.Push(20);
-        stack.Push(30);
-        System.out.println("Is Empty : " + stack.isEmpty());
-        stack.printStack();
-        stack.printStack();
-        stack.peek();
-        System.out.println(stack.peek());
-        System.out.println("Size : " + stack.GetLen());
-        while(!stack.isEmpty()){
-            int value = stack.pop();
-            System.out.println("The Value: " + value);
-        }
+        StackLinkedListBased<String> stackL = new StackLinkedListBased<>(true);
+        stackL.Push("Hello");
+        stackL.Push("World");
+        stackL.Push("!");
+        // while (!stackL.isEmpty()) {
+        // System.out.println(stackL.pop());
+        // }
+        stackL.printStack();
+        // StackLinkedListBased<Integer> stack= new StackLinkedListBased<>(true);
         System.out.println("-----------------------------------------------");
-
-        stackArray stackA = new stackArray();
+        StackArrayBased<Integer> stackA = new StackArrayBased<>(5);
+        stackA.push(1);
+        stackA.push(2);
+        stackA.push(3);
+        stackA.push(4);
+        stackA.push(5);
+        stackA.push(6);
+        stackA.push(7);
+        stackA.push(8);
+        stackA.push(9);
         stackA.push(10);
-        stackA.push(20);
-        stackA.push(30);
-        stackA.push(40);
-        stackA.push(50);
-        stackA.push(50);
-        stackA.push(100);
-        stackA.push(100);
-        stackA.push(10);
-        stackA.push(20);
-        stackA.push(30);
-        stackA.push(40);
-        stackA.push(50);
-        stackA.push(50);
-        stackA.push(100);
-        stackA.push(100);
-        System.out.println("The Size is: " + stackA.size());
-        while(!stackA.isEmpty()){
-            int value = stackA.pop();
-            System.out.println("The Value: " + value);
-        }
-        System.out.println(stackA.isEmpty());
-        System.out.println("The Size is: " + stackA.size());
+        // while (!stackA.isEmpty()) {
+        // System.out.println(stackA.pop());
+        // }
+        // System.out.println("-----------------------------------------------");
 
     }
 }

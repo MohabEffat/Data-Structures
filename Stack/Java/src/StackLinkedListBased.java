@@ -1,26 +1,33 @@
-class Stack{
-    private LinkedList dateList ;
-    Stack(boolean unique){
-        this.dateList = new LinkedList((unique));
+class StackLinkedListBased<T> {
+    private LinkedList<T> dateList;
+
+    StackLinkedListBased(boolean unique) {
+        this.dateList = new LinkedList<>((unique));
     }
-    public void Push(int _data){
+
+    public void Push(T _data) {
         this.dateList.InsertHead(_data);
     }
-    public int pop(){
-        int headData = this.dateList.Head.data;
+
+    public T pop() {
+        T headData = this.dateList.Head.data;
         this.dateList.DeleteHead();
         return headData;
     }
-    public int peek(){
+
+    public T peek() {
         return this.dateList.Head.data;
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return this.dateList.getSize() <= 0;
     }
-    public void printStack(){
+
+    public void printStack() {
         this.dateList.printList();
     }
-    public int GetLen(){
+
+    public int getSize() {
         return this.dateList.getSize();
     }
 }
