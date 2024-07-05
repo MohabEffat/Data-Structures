@@ -11,6 +11,6 @@ public class Hash {
             hash *= FNV_PRIME;
             hash &= 0xFFFFFFFFL;
         }
-        System.out.println(str + ", " + hash + ", " + Long.toHexString(hash) );
+        System.out.println("The Original Text : " + str + ", Hash Code : " + Long.toHexString(hash) );
     }
 }
