@@ -44,12 +44,34 @@ namespace LinkedListImpl.Classes
     }
     public class MyLinkedList<T>
     {
+
         public LinkedListNode<T> head = null;
         public LinkedListNode<T> tail = null;
         int Length = 0;
+        bool unique = false;
+        public MyLinkedList(bool _unique)
+        {
+            head = null;
+            tail = null;
+            Length = 0;
+            unique = _unique ? true : false;
+        }
         public LinkedListIterator<T> begin()
         {
            return new LinkedListIterator<T>(head);
+        }
+        bool isExist(T _date)
+        {
+            return Find(_date) != null;
+        }
+        bool CanInsert(T _date)
+        {
+            if(unique && isExist(_date))
+            {
+                Console.WriteLine("Data Already Exists");
+                return false;
+            }
+            return true;    
         }
         LinkedListNode<T> Find(T _data)
         {
@@ -79,6 +101,7 @@ namespace LinkedListImpl.Classes
         }
         public void InsertLast(T _data)
         {
+            if(!CanInsert(_data)) return;
             LinkedListNode<T> newNode = new LinkedListNode<T>(_data);
             if (head == null)
             {
@@ -94,6 +117,7 @@ namespace LinkedListImpl.Classes
         }
         public void InsertAfter(T CurrentData, T _data)
         {
+            if (!CanInsert(_data)) return;
             if (Find(CurrentData) == null)
                 return;
             LinkedListNode<T> node = Find(CurrentData);
@@ -107,6 +131,7 @@ namespace LinkedListImpl.Classes
         }
         public void InsertBefore(T CurrentData, T _data)
         {
+            if (!CanInsert(_data)) return;
             LinkedListNode<T> newNode = new LinkedListNode<T>(_data);
             LinkedListNode<T> node = Find(CurrentData);
             newNode.next = node;
@@ -146,6 +171,10 @@ namespace LinkedListImpl.Classes
 
 
         }
+        public int GetSize()
+        {
+            return Length;
+        }
         public void DeleteHead()
         {
             if (head == null)
@@ -153,11 +182,24 @@ namespace LinkedListImpl.Classes
             head = head.next;
             Length--;
         }
-        public int GetSize()
-        {
-            return Length;
-        }
 
+        public void InsertFirst(T _data)
+        {
+            if (!CanInsert(_data)) return;
+            LinkedListNode<T> newNode = new LinkedListNode<T>(_data);
+            if(head == null)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+
+            Length++;
+        }
 
     }
 }
