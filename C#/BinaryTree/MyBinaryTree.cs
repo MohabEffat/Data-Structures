@@ -13,6 +13,29 @@ namespace BinartTree
     {
 
         TreeNode Root;
+        public void Balance()
+        {
+            List<Tdata> nodes = new List<Tdata>();
+            InOrderToArray(Root, nodes);
+            Root = RecursiveBalance(0, nodes.Count - 1, nodes);
+        }  
+        void InOrderToArray(TreeNode node, List<Tdata> nodes)
+        {
+            if(node == null) return;
+            InOrderToArray(node.Left, nodes);
+            nodes.Add(node.data);
+            InOrderToArray(node.Right, nodes);
+        }
+        TreeNode RecursiveBalance(int start, int end, List<Tdata> nodes)
+        {
+            if (start > end) return null;
+            int mid = (start + end) / 2;
+            TreeNode newNode = new TreeNode(nodes[mid]);
+            //newNode.data = nodes[mid];
+            newNode.Left = RecursiveBalance(start, mid - 1, nodes);
+            newNode.Right = RecursiveBalance(mid + 1, end, nodes);
+            return newNode;
+        }
         public void Insert(Tdata _data)
         {
             TreeNode newNode = new TreeNode(_data);
