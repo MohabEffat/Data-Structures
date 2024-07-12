@@ -33,7 +33,7 @@ namespace LinkedListImpl.Classes
         }
         public LinkedListIterator<T> MoveNext()
         { 
-            this.CurrentNode = CurrentNode.next;
+            CurrentNode = CurrentNode.next;
             return this;
         } 
         public LinkedListNode<T> Current()
@@ -68,7 +68,7 @@ namespace LinkedListImpl.Classes
         {
             if(unique && isExist(_date))
             {
-                Console.WriteLine("Data Already Exists");
+                Console.WriteLine($"{_date} : Data Already Exists");
                 return false;
             }
             return true;    
