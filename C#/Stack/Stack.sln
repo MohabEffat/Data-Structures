@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Stack.csproj", "{A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "..\LinkedList\LinkedList.csproj", "{004BFD1B-4232-4027-B6D8-BF700A7D1662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "..\Queue\Queue.csproj", "{06BD2E7C-C160-4F95-8C34-172B753E1928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "..\Queue\Queue.csproj", "{06BD2E7C-C160-4F95-8C34-172B753E1928}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "..\BinaryTree\BinaryTree.csproj", "{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heap", "..\Heap\Heap.csproj", "{4E57E094-17E5-41E7-B979-4C68E1D99F81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{06BD2E7C-C160-4F95-8C34-172B753E1928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BD2E7C-C160-4F95-8C34-172B753E1928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06BD2E7C-C160-4F95-8C34-172B753E1928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
