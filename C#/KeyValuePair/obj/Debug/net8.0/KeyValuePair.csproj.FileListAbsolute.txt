@@ -1,0 +1,15 @@
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\bin\Debug\net8.0\KeyValuePair.exe
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\bin\Debug\net8.0\KeyValuePair.deps.json
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\bin\Debug\net8.0\KeyValuePair.runtimeconfig.json
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\bin\Debug\net8.0\KeyValuePair.dll
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\bin\Debug\net8.0\KeyValuePair.pdb
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.AssemblyInfo.cs
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.sourcelink.json
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.dll
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\refint\KeyValuePair.dll
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.pdb
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\KeyValuePair.genruntimeconfig.cache
+C:\Users\user\Downloads\CNBC\Data Structures\C#\KeyValuePair\obj\Debug\net8.0\ref\KeyValuePair.dll

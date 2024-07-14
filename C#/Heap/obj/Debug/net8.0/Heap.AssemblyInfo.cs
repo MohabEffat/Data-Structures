@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Heap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46f8d03f2c4ab9655c593e67c45176ff97992ac7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+111ed1657513bddac0bc02bcb3763bcad1e3502a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Heap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Heap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

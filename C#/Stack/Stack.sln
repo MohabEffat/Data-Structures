@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "..\Queue\Queue.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "..\BinaryTree\BinaryTree.csproj", "{EA14CE73-5629-4B36-93D3-6AC6A6404BCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heap", "..\Heap\Heap.csproj", "{4E57E094-17E5-41E7-B979-4C68E1D99F81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heap", "..\Heap\Heap.csproj", "{4E57E094-17E5-41E7-B979-4C68E1D99F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyValuePair", "..\KeyValuePair\KeyValuePair.csproj", "{36C3085D-00CB-458D-9D81-9BDDE68B2668}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E57E094-17E5-41E7-B979-4C68E1D99F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C3085D-00CB-458D-9D81-9BDDE68B2668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C3085D-00CB-458D-9D81-9BDDE68B2668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C3085D-00CB-458D-9D81-9BDDE68B2668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C3085D-00CB-458D-9D81-9BDDE68B2668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
